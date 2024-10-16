@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sumNumbers() {
+            let result1 = document.getElementById("result1");
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let sum = Number(num1) + Number(num2);
+            if (num1 === num2) {
+
+                result1.innerHTML = 3 * sum;
+
+
+
+            }
+            else
+                result1.innerHTML = sum;
+
+
+
+
+        }
+        function randomInteger() {
+            let result2 = document.getElementById("result2");
+            let num3 = document.getElementById("num3");
+            let rd1 = document.getElementById("rd1");
+
+
+            let randomBetween1and10 = Math.floor(Math.random() * 10) + 1;
+            rd1.innerHTML = randomBetween1and10
+            if (num3.value == randomBetween1and10) {
+                console.log("working")
+
+                result2.innerHTML = "Good work";
+
+
+
+            }
+            else {
+
+                console.log(num3.value)
+                console.log("not working")
+                result2.innerHTML = "Not matched";
+            }
+
+
+        }
+        function compareNumbers() {
+            let num4 = document.getElementById("num4").value;
+            let num5 = document.getElementById("num5").value;
+            let result3 = document.getElementById("result3");
+
+            if (num4 >= 50 && num4 <= 90 || num5 >= 50 && num5 <= 90){
+                console.log("working")
+
+                 result3.innerHTML = "True";}
+                 else
+                 console.log(" not working")
+                 result3.innerHTML = "False";
+
+
+
+        }
+        function nearestNumbers(){
+            let num6 = document.getElementById("num6").value;
+            let num7 = document.getElementById("num7").value;
+            let result4 = document.getElementById("result4");
+            let differ1=100-Number(num6);
+            let differ2=100-Number(num7);
+            // let differ1=Math.abs();
+            // let differ2=Math.abs();
+            
+             if(differ1<differ2){
+             result4.innerHTML = num6 + "is closest to 100";}
+             else
+             result4.innerHTML = num7 + "is closest to 100"
+
+        }
+        let blackArray=[]  
+       function addNumber(){
+        let num8 = document.getElementById("num8").value;
+            // push the numbers
+            blackArray.push(num8);
+            // clear the input field  
+            document.getElementById("num8").value='';
+
+
+       }
+       function displayNumbers(){
+                let blackArray=[]  
+
+        for(let i=0;i<blackArray.length();i++)
+        {let result5 = document.getElementById("result5");
+         result5.innerHTML+="Element"+(i+1)+"="+blackArray[i]+ "<br>"
+       }
+       }
+
+
+
+    </script>
+</head>
+
+<body>
+    <h2> Sum of two numbers </h2>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button type="button" onclick="sumNumbers()">click me!</button>
+    <p id="result1">Result 1:</p>
+    <br>
+    <h2>Random integer between 1 and 10 </h2>
+    <input type="text" id="num3">
+    <button type="button" onclick="randomInteger()">click me!</button>
+    <p id="result2">Result 2:</p>
+    <p id="rd1">Random numbers:</p>
+    <br>
+    <h2> Compare two numbers </h2>
+    <input type="text" id="num4">
+    <input type="text" id="num5">
+    <button type="button" onclick="compareNumbers()">Compare them</button>
+    <p id="result3">result3:</p>
+    <br> <br>
+    <h2> Nearest number  to 100 </h2>
+    <input type="text" id="num6">
+    <input type="text" id="num7">
+    <button type="button" onclick="nearestNumbers()">closest number </button>
+    <p id="result4">result4:</p>
+    <br>
+    <h2> black array </h2>
+    <input type="text" id="num8">
+    <button type="button" onclick="addNumber()">Add</button>
+
+    <button type="button" onclick="displayNumbers()">Display </button>
+    <p id="result5"></p>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
